@@ -10,8 +10,8 @@ interface CardWrapperProps {
 
 const CardWrapper = ({ skills, href, image, children }: CardWrapperProps) => {
 	return (
-		<li className="">
-            <a href={href} className="flex gap-6 mb-6">
+		<li className="group relative after:absolute after:inset-0 after:rounded hover:after:bg-slate-400/10 hover:cursor-pointer hover:after:shadow-xl motion-safe:transition-colors duration-300">
+            <a href={href} className="flex gap-6 p-3">
                 <div className="min-w-50">
                     <img src={image} className="max-w-50" />
                 </div>

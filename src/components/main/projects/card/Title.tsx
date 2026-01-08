@@ -7,7 +7,7 @@ interface TitleProps {
 
 const Title = ({ children }: TitleProps) => {
     return (
-        <h3 className="text-slate-200 flex gap-3 items-center">
+        <h3 className="text-slate-200 flex gap-3 items-center group-hover:text-slate-50 group-hover:font-bold">
             {children} <FaUpRightFromSquare />
         </h3>
     )

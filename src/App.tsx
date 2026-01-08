@@ -1,4 +1,4 @@
-import { createContext, useState, type Dispatch, type SetStateAction } from "react"
+import { createContext, useEffect, useState, type Dispatch, type SetStateAction } from "react"
 import SubTitle from "./components/header/branding/SubTitle"
 import TagLine from "./components/header/branding/TagLine"
 import BrandingTitle from "./components/header/branding/Title"
@@ -21,6 +21,7 @@ import ProjectsContainer from "./components/main/projects/ProjectsContainer"
 import ProjectWrapper from "./components/main/projects/card/Wrapper"
 import ProjectTitle from "./components/main/projects/card/Title"
 import ProjectParagraph from "./components/main/projects/card/Paragraph"
+import { InView } from "react-intersection-observer"
 
 export interface iActiveNavItemContext {
 	activeNavItem: number
@@ -36,6 +37,22 @@ function App() {
 		{ id: 2, href: "#projects", text: "Projects" },
 	]
 	const [activeNavItem, setActiveNavItem] = useState(0)
+
+	const [aboutInView, setAboutInView] = useState(false)
+	const [projectsInView, setProjectsInView] = useState(false)
+	const [experienceInView, setExperienceInView] = useState(false)
+
+	// Update state for active nav item on scroll
+	useEffect(() => {
+		if (aboutInView) {
+			setActiveNavItem(0)
+		} else if (experienceInView) {
+			setActiveNavItem(1)
+		} else if (projectsInView) {
+			setActiveNavItem(2)
+		}
+	}, [aboutInView, projectsInView, experienceInView])
+
 	return (
 		<div className="flex bg-slate-900">
 			<div className="flex flex-col lg:flex-row max-w-7xl mx-auto w-full">
@@ -67,9 +84,11 @@ function App() {
 						</SocialContainer>
 					</HeaderContainer>
 					<MainContainer>
-						<Heading>
-							About
-						</Heading>
+						<InView as="div" onChange={inView => setAboutInView(inView)}>
+							<Heading>
+								About
+							</Heading>
+						</InView>
 						<About>
 							<Paragraph>
 								I am a web developer with a great interest in React, similar frameworks, usability and accessibility. For the past decade I've been working as a developer in the USA, where I have used everything from <ParagraphLink href="https://www.php.net/">PHP</ParagraphLink> and <ParagraphLink href="https://wordpress.com/">Wordpress</ParagraphLink> to <ParagraphLink href="https://astro.build/">AstroJS</ParagraphLink> and <ParagraphLink href="https://reactrouter.com/">React Router</ParagraphLink>.
@@ -81,9 +100,11 @@ function App() {
 								I am proficient in various component libraries, and a hobby of mine is recreating these myself to see how they are implemented and function.
 							</Paragraph>
 						</About>
-						<Heading>
-							Experience
-						</Heading>
+						<InView as="div" onChange={inView => setExperienceInView(inView)}>
+							<Heading>
+								Experience
+							</Heading>
+						</InView>
 						<ExperienceContainer>
 							<CardWrapper
 								from="2023"
@@ -125,9 +146,11 @@ function App() {
 								</CardParagraph>
 							</CardWrapper>
 						</ExperienceContainer>
-						<Heading>
-							Projects
-						</Heading>
+						<InView as="div" onChange={inView => setProjectsInView(inView)}>
+							<Heading>
+								Projects
+							</Heading>
+						</InView>
 						<ProjectsContainer>
 							<ProjectWrapper
 								skills={[]}
