@@ -1,10 +1,10 @@
 import type { ReactNode } from "react"
 
-interface ExperienceContainerProps {
-    children: ReactNode
+interface ProjectsContainerProps {
+    children?: ReactNode
 }
 
-const ExperienceContainer = ({ children }: ExperienceContainerProps) => {
+const ProjectsContainer = ({ children }: ProjectsContainerProps) => {
     return (
         <section className="">
             <ul className="flex flex-col gap-6">
@@ -14,4 +14,4 @@ const ExperienceContainer = ({ children }: ExperienceContainerProps) => {
     )
 }
 
-export default ExperienceContainer
+export default ProjectsContainer

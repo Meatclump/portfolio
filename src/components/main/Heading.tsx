@@ -6,7 +6,7 @@ interface HeadingProps {
 
 const Heading = ({ children }: HeadingProps) => {
     return (
-        <h2 className="text-slate-200 font-semibold uppercase mb-8">
+        <h2 className="text-slate-200 font-semibold uppercase">
             {children}
         </h2>
     )

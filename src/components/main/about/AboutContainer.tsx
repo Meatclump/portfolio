@@ -6,9 +6,9 @@ interface AboutContainerProps {
 
 const AboutContainer = ({ children }: AboutContainerProps) => {
     return (
-        <div>
+        <section>
             {children}
-        </div>
+        </section>
     )
 }
 
