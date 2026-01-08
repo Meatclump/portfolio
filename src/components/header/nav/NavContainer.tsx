@@ -6,7 +6,7 @@ interface NavContainerProps {
 
 const NavContainer = ({ children }: NavContainerProps) => {
     return (
-        <nav className="mt-12">
+        <nav className="hidden lg:block mt-12">
             <ul className="flex flex-col gap-2">
                 {children}
             </ul>
