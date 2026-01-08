@@ -11,8 +11,8 @@ interface CardWrapperProps {
 
 const CardWrapper = ({ from, to, skills, href, children }: CardWrapperProps) => {
 	return (
-		<li className="">
-			<a href={href} className="flex gap-6 mb-6">
+		<li className="group relative after:absolute after:inset-0 after:rounded hover:after:bg-slate-400/10 hover:cursor-pointer hover:after:shadow-xl motion-safe:transition-colors duration-300">
+			<a href={href} className="flex gap-6 p-3">
 				<div className="min-w-37.5">
 					<p className="text-sm font-bold text-slate-500 pt-1">{from} — {to}</p>
 				</div>
