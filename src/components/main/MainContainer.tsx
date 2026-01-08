@@ -6,7 +6,7 @@ interface MainContainerProps {
 
 const MainContainer = ({ children }: MainContainerProps) => {
     return (
-        <main>
+        <main className="flex-1">
             {children}
         </main>
     )

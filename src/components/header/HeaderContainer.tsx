@@ -5,7 +5,7 @@ interface HeaderContainerProps {
 }
 const HeaderContainer = ({ children }: HeaderContainerProps) => {
     return (
-        <header className="flex flex-col">
+        <header className="flex-1 flex flex-col">
             {children}
         </header>
     )
