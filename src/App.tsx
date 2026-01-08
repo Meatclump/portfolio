@@ -6,6 +6,9 @@ import HeaderContainer from "./components/header/HeaderContainer"
 import NavContainer from "./components/header/nav/NavContainer"
 import NavElement from "./components/header/nav/NavElement"
 import MainContainer from "./components/main/MainContainer"
+import SocialContainer from "./components/header/social/SocialContainer"
+import SocialItem from "./components/header/social/SocialItem"
+import { FaGithub, FaLinkedin } from "react-icons/fa6"
 
 export interface iActiveNavItemContext {
 	activeNavItem: number
@@ -21,7 +24,7 @@ function App() {
 	]
 	const [activeNavItem, setActiveNavItem] = useState(1)
 	return (
-		<div className="flex flex-col min-h-screen bg-slate-900 px-12 py-16">
+		<div className="flex min-h-screen bg-slate-900 px-12 py-16">
 			<ActiveNavItemContext value={{ activeNavItem, setActiveNavItem }}>
 				<HeaderContainer>
 					<Title>Henrik Persson</Title>
@@ -40,6 +43,14 @@ function App() {
 							</NavElement>
 						))}
 					</NavContainer>
+					<SocialContainer>
+						<SocialItem href="https://github.com/Meatclump">
+							<FaGithub />
+						</SocialItem>
+						<SocialItem href="https://www.linkedin.com/in/henrik-persson-7b35b972/">
+							<FaLinkedin />
+						</SocialItem>
+					</SocialContainer>
 				</HeaderContainer>
 				<MainContainer>
 
