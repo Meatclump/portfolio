@@ -10,10 +10,13 @@ import SocialContainer from "./components/header/social/SocialContainer"
 import SocialItem from "./components/header/social/SocialItem"
 import { FaGithub, FaLinkedin } from "react-icons/fa6"
 import About from "./components/main/about/AboutContainer"
-import AboutTitle from "./components/main/about/Title"
+import Heading from "./components/main/Heading"
 import Paragraph from "./components/main/about/Paragraph"
-import PLink from "./components/main/about/ParagraphLink"
 import ParagraphLink from "./components/main/about/ParagraphLink"
+import ExperienceContainer from "./components/main/experience/ExperienceContainer"
+import CardWrapper from "./components/main/experience/card/Wrapper"
+import CardTitle from "./components/main/experience/card/Title"
+import CardParagraph from "./components/main/experience/card/Paragraph"
 
 export interface iActiveNavItemContext {
 	activeNavItem: number
@@ -25,9 +28,10 @@ const ActiveNavItemContext = createContext<iActiveNavItemContext | null>(null)
 function App() {
 	const navItems = [
 		{ id: 0, href: "#about", text: "About" },
-		{ id: 1, href: "#projects", text: "Projects" },
+		{ id: 1, href: "#experience", text: "Experience" },
+		{ id: 2, href: "#projects", text: "Projects" },
 	]
-	const [activeNavItem, setActiveNavItem] = useState(1)
+	const [activeNavItem, setActiveNavItem] = useState(0)
 	return (
 		<div className="flex min-h-screen bg-slate-900 px-12 py-16">
 			<div className="flex max-w-7xl mx-auto w-full">
@@ -60,9 +64,9 @@ function App() {
 					</HeaderContainer>
 					<MainContainer>
 						<About>
-							<AboutTitle>
+							<Heading>
 								About
-							</AboutTitle>
+							</Heading>
 							<Paragraph>
 								I am a web developer with a great interest in React, similar frameworks, usability and accessibility. For the past decade I've been working as a developer in the USA, where I have used everything from <ParagraphLink href="https://www.php.net/">PHP</ParagraphLink> and <ParagraphLink href="https://wordpress.com/">Wordpress</ParagraphLink> to <ParagraphLink href="https://astro.build/">AstroJS</ParagraphLink> and <ParagraphLink href="https://reactrouter.com/">React Router</ParagraphLink>.
 							</Paragraph>
@@ -73,6 +77,19 @@ function App() {
 								I am proficient in various component libraries, and a hobby of mine is recreating these myself to see how they are implemented and function.
 							</Paragraph>
 						</About>
+						<ExperienceContainer>
+							<Heading>
+								Experience
+							</Heading>
+							<CardWrapper from="2023" to="2025" skills={["JavaScript", "TypeScript", "HTML & CSS", "React", "Remix", "AstroJS", "React Router"]}>
+								<CardTitle href="https://srcpa.gov/">
+									Frontend Developer · Santa Rosa County Property Appraiser
+								</CardTitle>
+								<CardParagraph>
+									Designed, built and maintained the frontend code for the new website, as well as a number of integrated web apps (map, online filing system, etc). Worked closely with backend developers, product owner and other stakeholders to achieve the desired look and feel, while advocating for accessibility and best practices.
+								</CardParagraph>
+							</CardWrapper>
+						</ExperienceContainer>
 					</MainContainer>
 				</ActiveNavItemContext>
 			</div>

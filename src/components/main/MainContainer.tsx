@@ -6,7 +6,7 @@ interface MainContainerProps {
 
 const MainContainer = ({ children }: MainContainerProps) => {
     return (
-        <main className="flex-1">
+        <main className="flex-1 flex flex-col gap-12">
             {children}
         </main>
     )

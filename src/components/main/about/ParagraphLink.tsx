@@ -9,7 +9,7 @@ const ParagraphLink = ({ href, children }: ParagraphLinkProps) => {
     return (
         <a
             href={href}
-            className="font-bold text-slate-200 hover:text-emerald-300 motion-safe:transition-colors"
+            className="font-bold text-slate-200 hover:text-teal-300 motion-safe:transition-colors"
         >
             {children}
         </a>

@@ -1,10 +1,10 @@
 import type { ReactNode } from "react"
 
-interface TitleProps {
+interface HeadingProps {
     children: ReactNode
 }
 
-const Title = ({ children }: TitleProps) => {
+const Heading = ({ children }: HeadingProps) => {
     return (
         <h2 className="text-slate-200 font-semibold uppercase mb-8">
             {children}
@@ -12,4 +12,4 @@ const Title = ({ children }: TitleProps) => {
     )
 }
 
-export default Title
+export default Heading
