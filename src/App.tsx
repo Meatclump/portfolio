@@ -33,8 +33,8 @@ function App() {
 	]
 	const [activeNavItem, setActiveNavItem] = useState(0)
 	return (
-		<div className="flex min-h-screen bg-slate-900 px-12 py-16">
-			<div className="flex max-w-7xl mx-auto w-full">
+		<div className="flex bg-slate-900">
+			<div className="flex flex-col lg:flex-row max-w-7xl mx-auto w-full">
 				<ActiveNavItemContext value={{ activeNavItem, setActiveNavItem }}>
 					<HeaderContainer>
 						<BrandingTitle>Henrik Persson</BrandingTitle>
@@ -87,6 +87,14 @@ function App() {
 								</CardTitle>
 								<CardParagraph>
 									Designed, built and maintained the frontend code for the new website, as well as a number of integrated web apps (map, online filing system, etc). Worked closely with backend developers, product owner and other stakeholders to achieve the desired look and feel, while advocating for accessibility and best practices.
+								</CardParagraph>
+							</CardWrapper>
+							<CardWrapper from="2016" to="2023" skills={["JavaScript", "TypeScript", "HTML & CSS", "React", "PHP", "WordPress", "SASS", "Bootstrap"]}>
+								<CardTitle href="https://www.footbridgemedia.com/">
+									Web Developer · Footbridge Media
+								</CardTitle>
+								<CardParagraph>
+									Created lead-generating websites for contractors, and internal tools to improve efficiency of website turn-around. Primarily worked with PHP and JavaScript, but also React for some internal tools, such as a website crawler for parsing potential website content issues.
 								</CardParagraph>
 							</CardWrapper>
 						</ExperienceContainer>

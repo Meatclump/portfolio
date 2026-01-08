@@ -6,7 +6,7 @@ interface SocialContainerProps {
 
 const SocialContainer = ({ children }: SocialContainerProps) => {
     return (
-        <ul className="flex gap-3 text-slate-400 mt-auto">
+        <ul className="flex gap-3 text-slate-400 mt-12 lg:mt-auto">
             {children}
         </ul>
     )
